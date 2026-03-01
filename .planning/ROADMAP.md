@@ -33,12 +33,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. User can log out from any page and session is cleared
   4. User can reset a forgotten password via an email link
   5. The application is deployed and accessible at a production URL on Vercel with a Neon PostgreSQL database connected
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: Project scaffold — Next.js 15 App Router, TypeScript, Tailwind, Vercel deployment
-- [ ] 01-02: Database setup — Neon PostgreSQL, Drizzle ORM, schema (users, submissions, evaluations)
-- [ ] 01-03: Authentication — Clerk integration, sign-up, login, email verification, password reset, session persistence
+- [ ] 01-01-PLAN.md — Next.js 15 scaffold with all Phase 1 packages, folder structure, shared TypeScript types
+- [ ] 01-02-PLAN.md — Neon database setup, Drizzle schema (submissions + evaluation_results), migrations applied
+- [ ] 01-03-PLAN.md — Clerk auth integration (sign-up/in/out, email verification, password reset) + Vercel production deployment
 
 ### Phase 2: Scenario Engine
 **Goal**: The parking lot simulation state machine runs server-side, produces typed SimulationState snapshot arrays, and is architected as a Scenario plugin interface so future scenarios are configuration work
