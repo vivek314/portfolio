@@ -10,27 +10,27 @@ See: .planning/PROJECT.md (updated 2026-03-01)
 ## Current Position
 
 Phase: 1 of 10 (Foundation)
-Plan: 0 of 3 in current phase
-Status: Ready to plan
-Last activity: 2026-03-01 — Roadmap and STATE initialized after requirements scoping
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-03-01 — Completed Plan 01 (Project Scaffold)
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [█░░░░░░░░░] 3%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 0
-- Average duration: — min
-- Total execution time: 0 hours
+- Total plans completed: 1
+- Average duration: 15 min
+- Total execution time: 0.25 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| - | - | - | - |
+| 01-foundation | 1 | 15 min | 15 min |
 
 **Recent Trend:**
-- Last 5 plans: —
+- Last 5 plans: 15 min
 - Trend: —
 
 *Updated after each plan completion*
@@ -47,6 +47,9 @@ Recent decisions affecting current work:
 - [Pre-build]: Stack finalized — Next.js 15 + Clerk (not NextAuth) + Neon + Drizzle (not Prisma) + Vercel AI SDK + Claude 3.5 Sonnet + Upstash Redis + Framer Motion + SVG.
 - [Phase 2]: Scenario plugin interface is non-negotiable — Scenario interface with simulate(), evaluate(), visualize() methods must be defined in Phase 2 before evaluator or visualization code is written.
 - [Phase 4]: Evaluator golden test gate — 20+ known-correct and known-broken solutions must pass at 90%+ criterion accuracy before Phase 5 (PA) or Phase 6 (visualization) work begins.
+- [01-01]: Tailwind 4.x @import syntax used (not v3 @tailwind directives) — create-next-app 16 installs Tailwind 4 which uses @import "tailwindcss".
+- [01-01]: Next.js 16.1.6 scaffolded (plan said 15, but 16 is current release and backward-compatible for all planned features).
+- [01-01]: .env.local.example whitelist added to .gitignore via !.env.local.example negation rule — template file must be committed.
 
 ### Pending Todos
 
@@ -60,5 +63,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-01
-Stopped at: Roadmap creation complete — all 38 v1 requirements mapped to 10 phases. Ready for /gsd:plan-phase 1.
+Stopped at: Completed 01-01-PLAN.md (Project Scaffold) — Plan 02 (Neon DB) and Plan 03 (Clerk Auth) ready to proceed.
 Resume file: None

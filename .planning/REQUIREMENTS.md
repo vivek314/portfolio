@@ -67,7 +67,7 @@ Requirements for MVP launch. Grouped by category with REQ-IDs for traceability.
 - [ ] **INFRA-02**: LLM evaluation uses Claude 3.5 Sonnet with temperature=0 (consistent)
 - [ ] **INFRA-03**: Evaluation results are cached to prevent duplicate API calls
 - [ ] **INFRA-04**: Rate limiting via Upstash Redis
-- [ ] **INFRA-05**: Database uses Neon (serverless PostgreSQL)
+- [x] **INFRA-05**: Database uses Neon (serverless PostgreSQL)
 - [ ] **INFRA-07**: Error monitoring active in production — unhandled exceptions generate alerts and LLM model parameters are logged per evaluation record
 
 ## v2 Requirements
