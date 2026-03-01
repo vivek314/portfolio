@@ -10,27 +10,27 @@ See: .planning/PROJECT.md (updated 2026-03-01)
 ## Current Position
 
 Phase: 1 of 10 (Foundation)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-03-01 — Completed Plan 01 (Project Scaffold)
+Last activity: 2026-03-01 — Completed Plan 02 (Neon DB + Drizzle)
 
-Progress: [█░░░░░░░░░] 3%
+Progress: [██░░░░░░░░] 7%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: 15 min
-- Total execution time: 0.25 hours
+- Total plans completed: 2
+- Average duration: 30 min
+- Total execution time: 0.75 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01-foundation | 1 | 15 min | 15 min |
+| 01-foundation | 2 | 60 min | 30 min |
 
 **Recent Trend:**
-- Last 5 plans: 15 min
+- Last 5 plans: 15 min, 45 min
 - Trend: —
 
 *Updated after each plan completion*
@@ -50,6 +50,9 @@ Recent decisions affecting current work:
 - [01-01]: Tailwind 4.x @import syntax used (not v3 @tailwind directives) — create-next-app 16 installs Tailwind 4 which uses @import "tailwindcss".
 - [01-01]: Next.js 16.1.6 scaffolded (plan said 15, but 16 is current release and backward-compatible for all planned features).
 - [01-01]: .env.local.example whitelist added to .gitignore via !.env.local.example negation rule — template file must be committed.
+- [01-02]: Neon HTTP driver (drizzle-orm/neon-http) used instead of TCP pg driver — TCP connections fail on Vercel serverless; HTTP driver is required for this deployment target.
+- [01-02]: generate + migrate workflow enforced over drizzle-kit push — push skips migration history; all schema changes go through generate → migrate pipeline.
+- [01-02]: Clerk user IDs stored as text FK (clerk_user_id) with no local users table — Clerk is the authority on user records; eliminates user sync complexity entirely.
 
 ### Pending Todos
 
@@ -63,5 +66,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-01
-Stopped at: Completed 01-01-PLAN.md (Project Scaffold) — Plan 02 (Neon DB) and Plan 03 (Clerk Auth) ready to proceed.
+Stopped at: Completed 01-02-PLAN.md (Neon DB + Drizzle) — Plan 03 (Clerk Auth + Vercel Deployment) ready to proceed.
 Resume file: None

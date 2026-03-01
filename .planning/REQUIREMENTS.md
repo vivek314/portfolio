@@ -177,7 +177,7 @@ Which phases cover which requirements. Updated during roadmap revision (2026-03-
 | INFRA-02 | Phase 8 — Infrastructure | Pending |
 | INFRA-03 | Phase 8 — Infrastructure | Pending |
 | INFRA-04 | Phase 8 — Infrastructure | Pending |
-| INFRA-05 | Phase 1 — Foundation | Pending |
+| INFRA-05 | Phase 1 — Foundation | Complete |
 | INFRA-07 | Phase 8 — Infrastructure | Pending |
 
 **Coverage:**

@@ -37,7 +37,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 Plans:
 - [x] 01-01-PLAN.md — Next.js 15 scaffold with all Phase 1 packages, folder structure, shared TypeScript types
-- [ ] 01-02-PLAN.md — Neon database setup, Drizzle schema (submissions + evaluation_results), migrations applied
+- [x] 01-02-PLAN.md — Neon database setup, Drizzle schema (submissions + evaluation_results), migrations applied
 - [ ] 01-03-PLAN.md — Clerk auth integration (sign-up/in/out, email verification, password reset) + Vercel production deployment
 
 ### Phase 2: Scenario Engine
@@ -173,7 +173,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 1/3 | In progress | - |
+| 1. Foundation | 2/3 | In progress | - |
 | 2. Scenario Engine | 0/4 | Not started | - |
 | 3. Editor | 0/3 | Not started | - |
 | 4. Evaluation Engine | 0/3 | Not started | - |
