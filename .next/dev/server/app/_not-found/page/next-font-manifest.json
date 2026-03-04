@@ -1,0 +1,11 @@
+{
+  "pages": {},
+  "app": {
+    "[project]/heyvivek/src/app/_not-found/page": [
+      "static/media/0c8f209abc35ee02-s.p.a4b9a15b.woff2",
+      "static/media/1b99372b3eaef0c8-s.p.758e15a8.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pagesUsingSizeAdjust": false
+}

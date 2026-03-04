@@ -9,6 +9,7 @@ import Hero from "@/components/sections/Hero";
 
 const About = dynamic(() => import("@/components/sections/About"));
 const Projects = dynamic(() => import("@/components/sections/Projects"));
+const SystemDesign = dynamic(() => import("@/components/sections/SystemDesign"));
 const Resume = dynamic(() => import("@/components/sections/Resume"));
 const Contact = dynamic(() => import("@/components/sections/Contact"));
 
@@ -30,6 +31,7 @@ export default function HomePage() {
         <Hero onNavigate={handleNavigate} />
         <About />
         <Projects />
+        <SystemDesign />
         <Resume />
         <Contact />
       </main>

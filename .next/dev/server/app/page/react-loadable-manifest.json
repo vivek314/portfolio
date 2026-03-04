@@ -1,0 +1,39 @@
+{
+  "[project]/heyvivek/src/components/sections/About.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/heyvivek/src/components/sections/About.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/heyvivek_src_components_sections_About_tsx_e44518bd._.js",
+      "static/chunks/heyvivek_src_components_sections_About_tsx_1a16fc4e._.js"
+    ]
+  },
+  "[project]/heyvivek/src/components/sections/Projects.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/heyvivek/src/components/sections/Projects.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/node_modules_next_71e330a9._.js",
+      "static/chunks/heyvivek_src_03d4ee80._.js",
+      "static/chunks/heyvivek_src_components_sections_Projects_tsx_1a16fc4e._.js"
+    ]
+  },
+  "[project]/heyvivek/src/components/sections/SystemDesign.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/heyvivek/src/components/sections/SystemDesign.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/node_modules_next_71e330a9._.js",
+      "static/chunks/heyvivek_src_549d9464._.js",
+      "static/chunks/heyvivek_src_components_sections_SystemDesign_tsx_1a16fc4e._.js"
+    ]
+  },
+  "[project]/heyvivek/src/components/sections/Resume.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/heyvivek/src/components/sections/Resume.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/heyvivek_src_3455cb6e._.js",
+      "static/chunks/heyvivek_src_components_sections_Resume_tsx_1a16fc4e._.js"
+    ]
+  },
+  "[project]/heyvivek/src/components/sections/Contact.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/heyvivek/src/components/sections/Contact.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/heyvivek_src_components_sections_Contact_tsx_89e5daa6._.js",
+      "static/chunks/heyvivek_src_components_sections_Contact_tsx_1a16fc4e._.js"
+    ]
+  }
+}

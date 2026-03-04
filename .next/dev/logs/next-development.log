@@ -1,0 +1,8 @@
+[00:00:02.027] Server  LOG     ✓ Ready in 1484ms
+[00:00:51.394] Server  LOG     ○ Compiling / ...
+[00:00:53.574] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:24.955] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/images/projects/xml-json-converter.png" "received" null
+[00:01:24.958] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/images/projects/code-review-bot.png" "received" null
+[00:01:24.959] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/images/projects/multi-agent-workflow.png" "received" null
+[00:01:24.968] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/images/hld-twitter.png" "received" null
+[00:01:43.885] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/images/hld-twitter.png" "received" null
