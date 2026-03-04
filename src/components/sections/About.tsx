@@ -2,42 +2,24 @@
 
 import { motion, type Variants } from "framer-motion";
 
-const skills = [
-  // Languages
-  { name: "Java", category: "backend" },
-  { name: "Python", category: "backend" },
-  { name: "SQL", category: "backend" },
-  { name: "C++", category: "backend" },
-  // Backend
-  { name: "Spring Boot", category: "backend" },
-  { name: "Kafka", category: "backend" },
-  { name: "Langchain", category: "backend" },
-  { name: "LangGraph", category: "backend" },
-  // Tools & Platforms
-  { name: "Docker", category: "tool" },
-  { name: "Git", category: "tool" },
-  { name: "Maven", category: "tool" },
-  { name: "JUnit 5", category: "tool" },
-] as const;
-
-const pillClass: Record<string, string> = {
-  frontend: "clay-pill clay-pill-frontend",
-  backend: "clay-pill clay-pill-backend",
-  tool: "clay-pill clay-pill-tool",
-};
+const stats = [
+  { number: "3+", label: "Years Experience" },
+  { number: "20+", label: "Projects Built" },
+  { number: "10+", label: "System Designs" },
+  { number: "5+", label: "AI Models Deployed" },
+];
 
 const containerVariants: Variants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.06, delayChildren: 0.3 },
+    transition: { staggerChildren: 0.08, delayChildren: 0.3 },
   },
 };
 
-const pillVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.8, y: 10 },
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
-    scale: 1,
     y: 0,
     transition: { type: "spring", stiffness: 300, damping: 20 },
   },
@@ -47,16 +29,35 @@ export default function About() {
   return (
     <section
       id="about"
+      className="dark-section"
       style={{
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "120px 24px",
+        padding: "100px 24px",
         position: "relative",
       }}
     >
-      <div style={{ maxWidth: "600px", width: "100%" }}>
+      <div style={{ maxWidth: "1100px", width: "100%" }}>
+        {/* Section Label */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          style={{
+            fontSize: "0.7rem",
+            letterSpacing: "0.2em",
+            textTransform: "uppercase",
+            color: "var(--dark-accent)",
+            fontWeight: 500,
+            marginBottom: "12px",
+          }}
+        >
+          About Me
+        </motion.p>
+
         {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -65,86 +66,78 @@ export default function About() {
           transition={{ duration: 0.6 }}
           style={{
             fontFamily: "var(--font-display)",
-            fontSize: "clamp(40px, 6vw, 56px)",
-            color: "#3D3229",
-            marginBottom: "32px",
+            fontSize: "clamp(2rem, 4vw, 3rem)",
+            color: "var(--dark-text-primary)",
+            marginBottom: "40px",
+            letterSpacing: "-0.02em",
           }}
         >
-          About Me
+          Crafting Digital<br />Experiences
         </motion.h2>
 
-        {/* Bio card */}
-        <motion.div
-          initial={{ opacity: 0, y: 40, scale: 0.97 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ type: "spring", stiffness: 120, damping: 18 }}
-          className="clay-card"
-          style={{ padding: "32px", marginBottom: "32px" }}
-        >
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontSize: "16px",
-              lineHeight: 1.8,
-              color: "#7A6E62",
-              marginBottom: "16px",
-            }}
-          >
-            I&apos;m a Software Developer at Oracle, specializing in Financial Service Cloud Development. AI graduate from IIT Hyderabad with expertise in building scalable, distributed systems and event-driven architectures. I focus on designing robust backend solutions with a passion for clean, maintainable code.
-          </p>
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontSize: "16px",
-              lineHeight: 1.8,
-              color: "#7A6E62",
-            }}
-          >
-            My work spans designing batch orchestration systems, implementing producer-side services, and architecting event-driven platforms. I believe in the power of system design principles, distributed computing, and using the right tools to solve complex problems at scale.
-          </p>
-        </motion.div>
-
-        {/* Skill tags */}
-        <motion.h3
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+        {/* Grid Layout: Text on left, Stats on right */}
+        <div
           style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "13px",
-            fontWeight: 600,
-            color: "#C67B5C",
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-            marginBottom: "16px",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "60px",
+            alignItems: "start",
           }}
         >
-          Tech I work with
-        </motion.h3>
-
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "10px",
-          }}
-        >
-          {skills.map((skill) => (
-            <motion.span
-              key={skill.name}
-              variants={pillVariants}
-              className={pillClass[skill.category]}
+          {/* Left: Bio Text */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p
+              style={{
+                color: "var(--dark-text-secondary)",
+                fontSize: "0.95rem",
+                marginBottom: "20px",
+                fontWeight: 300,
+                lineHeight: 1.8,
+              }}
             >
-              {skill.name}
-            </motion.span>
-          ))}
-        </motion.div>
+              I&apos;m a Backend & AI Engineer passionate about building scalable systems and intelligent applications. With a deep understanding of system design principles, I create architectures that are resilient, performant, and elegant.
+            </p>
+            <p
+              style={{
+                color: "var(--dark-text-secondary)",
+                fontSize: "0.95rem",
+                fontWeight: 300,
+                lineHeight: 1.8,
+              }}
+            >
+              When I&apos;m not writing code, I&apos;m exploring new technologies, contributing to open-source, and sharing knowledge about distributed systems and machine learning pipelines.
+            </p>
+          </motion.div>
+
+          {/* Right: Stat Cards Grid */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "24px",
+            }}
+          >
+            {stats.map((stat) => (
+              <motion.div
+                key={stat.label}
+                variants={cardVariants}
+                className="dark-stat-card"
+              >
+                <div className="dark-stat-number">{stat.number}</div>
+                <div className="dark-stat-label">{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -29,132 +29,131 @@ export default function Contact() {
   return (
     <section
       id="contact"
+      className="dark-section"
       style={{
         minHeight: "100vh",
         display: "flex",
+        flexDirection: "column",
         alignItems: "center",
-        padding: "128px 24px",
+        justifyContent: "center",
+        textAlign: "center",
+        padding: "120px 24px",
         position: "relative",
       }}
     >
-      {/* Background blob */}
-      <div
-        className="clay-blob"
-        style={{
-          width: "350px",
-          height: "350px",
-          background:
-            "radial-gradient(circle, rgba(143,174,139,0.3) 0%, rgba(143,174,139,0) 70%)",
-          bottom: "10%",
-          left: "5%",
-          animation: "float 8s ease-in-out infinite",
-        }}
-      />
-
-      {/* Card occupies left side (character fills right via canvas overlay) */}
-      <motion.div
-        initial={{ opacity: 0, x: -40, scale: 0.97 }}
-        whileInView={{ opacity: 1, x: 0, scale: 1 }}
+      {/* Section Label */}
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ type: "spring", stiffness: 100, damping: 18 }}
-        className="clay-card"
+        transition={{ duration: 0.5 }}
         style={{
-          padding: "48px",
-          maxWidth: "480px",
-          width: "100%",
-          position: "relative",
-          zIndex: 20,
+          fontSize: "0.7rem",
+          letterSpacing: "0.2em",
+          textTransform: "uppercase",
+          color: "var(--dark-accent)",
+          fontWeight: 500,
+          marginBottom: "12px",
         }}
       >
-        {/* Heading */}
-        <h2
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: "clamp(36px, 5vw, 52px)",
-            color: "#3D3229",
-            lineHeight: 1.1,
-            marginBottom: "16px",
-          }}
-        >
-          Let&apos;s Connect
-        </h2>
+        Get In Touch
+      </motion.p>
 
-        <p
-          style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "15px",
-            color: "#7A6E62",
-            lineHeight: 1.7,
-            marginBottom: "36px",
-          }}
-        >
-          Got a project in mind? Let&apos;s make it happen. I&apos;m always
-          open to interesting collaborations and conversations.
-        </p>
+      {/* Heading */}
+      <motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        style={{
+          fontFamily: "var(--font-display)",
+          fontSize: "clamp(2rem, 4vw, 3rem)",
+          color: "var(--dark-text-primary)",
+          marginBottom: "16px",
+          letterSpacing: "-0.02em",
+        }}
+      >
+        Let&apos;s Work Together
+      </motion.h2>
 
-        {/* Social links */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "12px",
-          }}
-        >
-          {socials.map((social) => (
-            <motion.a
-              key={social.label}
-              href={social.href}
-              target={social.href.startsWith("http") ? "_blank" : undefined}
-              rel={
-                social.href.startsWith("http")
-                  ? "noopener noreferrer"
-                  : undefined
-              }
-              whileHover={{ x: 6, scale: 1.02 }}
-              whileTap={{ scale: 0.97 }}
-              className="clay-pill"
-              style={{
-                padding: "14px 20px",
-                borderRadius: "14px",
-                display: "flex",
-                alignItems: "center",
-                gap: "12px",
-                textDecoration: "none",
-                cursor: "pointer",
-                fontSize: "15px",
-                justifyContent: "space-between",
-              }}
-            >
-              <span style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                <span style={{ fontSize: "18px" }}>{social.icon}</span>
-                <span
-                  style={{
-                    fontFamily: "var(--font-body)",
-                    fontWeight: 500,
-                    color: "#3D3229",
-                  }}
-                >
-                  {social.label}
-                </span>
+      {/* Subtitle */}
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        style={{
+          color: "var(--dark-text-muted)",
+          fontSize: "0.95rem",
+          marginBottom: "48px",
+          fontWeight: 300,
+          maxWidth: "600px",
+        }}
+      >
+        Have a project in mind? Let&apos;s build something amazing together.
+      </motion.p>
+
+      {/* Contact Links */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "16px",
+          flexWrap: "wrap",
+          maxWidth: "800px",
+        }}
+      >
+        {socials.map((social) => (
+          <motion.a
+            key={social.label}
+            href={social.href}
+            target={social.href.startsWith("http") ? "_blank" : undefined}
+            rel={
+              social.href.startsWith("http")
+                ? "noopener noreferrer"
+                : undefined
+            }
+            whileHover={{ y: -2, scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="dark-contact-link"
+          >
+            <span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <span style={{ fontSize: "18px" }}>{social.icon}</span>
+              <span
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontWeight: 400,
+                  color: "var(--dark-text-secondary)",
+                }}
+              >
+                {social.label}
               </span>
-              <span style={{ color: "#C67B5C", fontWeight: 600 }}>↗</span>
-            </motion.a>
-          ))}
-        </div>
-
-        {/* Footer note */}
-        <p
-          style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "12px",
-            color: "#C8BFB0",
-            marginTop: "32px",
-            textAlign: "center",
-          }}
-        >
-          Made with ☕ & ♥ — heyvivek.in
-        </p>
+            </span>
+          </motion.a>
+        ))}
       </motion.div>
+
+      {/* Footer note */}
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        style={{
+          fontFamily: "var(--font-body)",
+          fontSize: "0.78rem",
+          color: "var(--dark-text-muted)",
+          marginTop: "48px",
+          textAlign: "center",
+          letterSpacing: "0.02em",
+        }}
+      >
+        Designed & Built with <span style={{ color: "var(--dark-accent)" }}>♥</span> by Vivek — 2026
+      </motion.p>
     </section>
   );
 }
