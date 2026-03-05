@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, Outfit } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 const dmSerifDisplay = DM_Serif_Display({
   variable: "--font-display",
@@ -58,11 +59,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Prevent flash of wrong theme (FOUT) */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var t = localStorage.getItem('theme');
+                  if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${dmSerifDisplay.variable} ${outfit.variable}`}
         suppressHydrationWarning
       >
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

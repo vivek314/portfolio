@@ -2,18 +2,22 @@
 
 import { motion, type Variants } from "framer-motion";
 
+const stats = [
+  { number: "3+", label: "Years Experience" },
+  { number: "8.55", label: "GPA at IIT Hyderabad" },
+  { number: "10+", label: "System Designs" },
+  { number: "4+", label: "AI Certifications" },
+];
+
 const skills = [
-  // Languages
   { name: "Java", category: "backend" },
   { name: "Python", category: "backend" },
   { name: "SQL", category: "backend" },
   { name: "C++", category: "backend" },
-  // Backend
   { name: "Spring Boot", category: "backend" },
   { name: "Kafka", category: "backend" },
   { name: "Langchain", category: "backend" },
   { name: "LangGraph", category: "backend" },
-  // Tools & Platforms
   { name: "Docker", category: "tool" },
   { name: "Git", category: "tool" },
   { name: "Maven", category: "tool" },
@@ -26,19 +30,19 @@ const pillClass: Record<string, string> = {
   tool: "clay-pill clay-pill-tool",
 };
 
-const containerVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.06, delayChildren: 0.3 },
-  },
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 140, damping: 18, delay: i * 0.08 },
+  }),
 };
 
 const pillVariants: Variants = {
   hidden: { opacity: 0, scale: 0.8, y: 10 },
   visible: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
+    opacity: 1, scale: 1, y: 0,
     transition: { type: "spring", stiffness: 300, damping: 20 },
   },
 };
@@ -47,93 +51,152 @@ export default function About() {
   return (
     <section
       id="about"
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "120px 24px",
-        position: "relative",
-      }}
+      style={{ padding: "120px 24px", position: "relative" }}
     >
-      <div style={{ maxWidth: "600px", width: "100%" }}>
-        {/* Heading */}
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
+      <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
+
+        {/* Section Label */}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           style={{
-            fontFamily: "var(--font-display)",
-            fontSize: "clamp(40px, 6vw, 56px)",
-            color: "#3D3229",
-            marginBottom: "32px",
+            fontFamily: "var(--font-body)",
+            fontSize: "12px",
+            fontWeight: 600,
+            color: "var(--clay-primary)",
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+            marginBottom: "12px",
           }}
         >
           About Me
+        </motion.p>
+
+        {/* Heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.05 }}
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "clamp(36px, 5vw, 52px)",
+            color: "var(--clay-dark)",
+            marginBottom: "56px",
+            lineHeight: 1.1,
+          }}
+        >
+          Crafting Scalable Systems
         </motion.h2>
 
-        {/* Bio card */}
-        <motion.div
-          initial={{ opacity: 0, y: 40, scale: 0.97 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ type: "spring", stiffness: 120, damping: 18 }}
-          className="clay-card"
-          style={{ padding: "32px", marginBottom: "32px" }}
+        {/* 2-col: text + stats */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "60px",
+            alignItems: "start",
+            marginBottom: "56px",
+          }}
         >
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontSize: "16px",
-              lineHeight: 1.8,
-              color: "#7A6E62",
-              marginBottom: "16px",
-            }}
+          {/* Bio text */}
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
           >
-            I&apos;m a Software Developer at Oracle, specializing in Financial Service Cloud Development. AI graduate from IIT Hyderabad with expertise in building scalable, distributed systems and event-driven architectures. I focus on designing robust backend solutions with a passion for clean, maintainable code.
-          </p>
-          <p
-            style={{
+            <p style={{
               fontFamily: "var(--font-body)",
-              fontSize: "16px",
-              lineHeight: 1.8,
-              color: "#7A6E62",
-            }}
-          >
-            My work spans designing batch orchestration systems, implementing producer-side services, and architecting event-driven platforms. I believe in the power of system design principles, distributed computing, and using the right tools to solve complex problems at scale.
-          </p>
-        </motion.div>
+              fontSize: "15px",
+              lineHeight: 1.85,
+              color: "var(--clay-muted)",
+              marginBottom: "20px",
+              fontWeight: 300,
+            }}>
+              I&apos;m a Backend &amp; AI Engineer at Oracle India, specializing in Financial Service Cloud Development.
+              AI graduate from IIT Hyderabad with expertise in building scalable,
+              distributed systems and event-driven architectures.
+            </p>
+            <p style={{
+              fontFamily: "var(--font-body)",
+              fontSize: "15px",
+              lineHeight: 1.85,
+              color: "var(--clay-muted)",
+              fontWeight: 300,
+            }}>
+              My work spans designing batch orchestration systems, implementing producer-side
+              services, and architecting event-driven platforms. I believe in the power of system
+              design principles, distributed computing, and using the right tools to solve complex
+              problems at scale.
+            </p>
+          </motion.div>
 
-        {/* Skill tags */}
-        <motion.h3
+          {/* Stats 2×2 grid */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
+            {stats.map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                custom={i}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="clay-card stat-card-hover"
+                style={{ padding: "28px", position: "relative", overflow: "hidden" }}
+              >
+                {/* Top accent line — visible on hover via CSS */}
+                <div className="stat-accent-line" />
+                <div style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "2rem",
+                  fontWeight: 700,
+                  color: "var(--clay-primary)",
+                  lineHeight: 1,
+                  marginBottom: "8px",
+                }}>
+                  {stat.number}
+                </div>
+                <div style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "12px",
+                  color: "var(--clay-muted)",
+                  letterSpacing: "0.04em",
+                }}>
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Tech skills */}
+        <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           style={{
             fontFamily: "var(--font-body)",
-            fontSize: "13px",
+            fontSize: "12px",
             fontWeight: 600,
-            color: "#C67B5C",
-            letterSpacing: "0.1em",
+            color: "var(--clay-primary)",
+            letterSpacing: "0.15em",
             textTransform: "uppercase",
             marginBottom: "16px",
           }}
         >
           Tech I work with
-        </motion.h3>
+        </motion.p>
 
         <motion.div
-          variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "10px",
-          }}
+          transition={{ staggerChildren: 0.05 }}
+          style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}
         >
           {skills.map((skill) => (
             <motion.span

@@ -297,3 +297,162 @@ body {
    ===================================================== */
 
 section { position: relative; z-index: 20; }
+
+/* =====================================================
+   SMOOTH THEME TRANSITION
+   ===================================================== */
+
+*, *::before, *::after {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* =====================================================
+   DARK MODE — CSS Variable Overrides
+   ===================================================== */
+
+[data-theme="dark"] {
+  --clay-bg: #131110;
+  --clay-card: #1e1b17;
+  --clay-primary: #c4713b;
+  --clay-secondary: #8FAE8B;
+  --clay-dark: #f0e6d8;
+  --clay-muted: #b8a99a;
+  --clay-shadow: #221e1a;
+  --clay-white: #1a1715;
+
+  --clay-card-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.3),
+    0 1px 0 rgba(184, 169, 154, 0.06) inset;
+
+  --clay-btn-shadow:
+    0 4px 20px rgba(196, 113, 59, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] body {
+  background-color: #131110 !important;
+  color: #f0e6d8;
+}
+
+html[data-theme="dark"] {
+  background-color: #131110;
+  color-scheme: dark;
+}
+
+/* Dark mode: remove neumorphic card hover, use border glow instead */
+[data-theme="dark"] .clay-card {
+  border: 1px solid rgba(184, 169, 154, 0.08);
+  background: #1e1b17;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+
+[data-theme="dark"] .clay-card:hover {
+  border-color: rgba(184, 169, 154, 0.16);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 60px rgba(196,113,59,0.06);
+  transform: translateY(-4px);
+}
+
+[data-theme="dark"] .clay-nav {
+  background: rgba(26, 23, 21, 0.8);
+  border: 1px solid rgba(184, 169, 154, 0.08);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+
+[data-theme="dark"] .clay-pill {
+  background: #221e1a;
+  color: #b8a99a;
+  border: 1px solid rgba(184, 169, 154, 0.1);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .clay-pill-backend {
+  background: rgba(196, 113, 59, 0.12);
+  color: #d4915e;
+  border: 1px solid rgba(196, 113, 59, 0.2);
+}
+
+[data-theme="dark"] .clay-pill-tool {
+  background: #221e1a;
+  color: #7a6e63;
+  border: 1px solid rgba(184, 169, 154, 0.08);
+}
+
+[data-theme="dark"] .clay-btn {
+  background: linear-gradient(135deg, #c4713b, #a85d30);
+  box-shadow: 0 4px 20px rgba(196,113,59,0.25), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] .clay-btn-outline {
+  border-color: rgba(184, 169, 154, 0.2);
+  box-shadow: none;
+  color: #b8a99a;
+}
+
+[data-theme="dark"] .clay-btn-outline:hover {
+  background: #c4713b;
+  border-color: #c4713b;
+  color: white;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track { background: #1a1715; }
+[data-theme="dark"] ::-webkit-scrollbar-thumb { background: #3d3530; }
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover { background: #c4713b; }
+
+/* Dark mode noise overlay */
+[data-theme="dark"] body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* =====================================================
+   STAT CARD — Hover accent line
+   ===================================================== */
+
+.stat-accent-line {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--clay-primary), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.stat-card-hover:hover .stat-accent-line { opacity: 1; }
+
+/* =====================================================
+   CONTACT PILL LINK — hover
+   ===================================================== */
+
+.contact-pill-link:hover {
+  border-color: var(--clay-primary) !important;
+  color: var(--clay-primary) !important;
+  box-shadow: 0 4px 20px rgba(198, 123, 92, 0.15) !important;
+}
+
+[data-theme="dark"] .contact-pill-link {
+  background: #1e1b17;
+  border-color: rgba(184,169,154,0.1) !important;
+  color: #b8a99a !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .contact-pill-link:hover {
+  border-color: #c4713b !important;
+  color: #d4915e !important;
+  box-shadow: 0 4px 20px rgba(196,113,59,0.12) !important;
+}
+
+/* =====================================================
+   RESPONSIVE — About 2-col grid
+   ===================================================== */
+
+@media (max-width: 768px) {
+  .about-two-col {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}

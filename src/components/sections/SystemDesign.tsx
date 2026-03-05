@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { designs, type DesignEntry, type DesignType } from "@/lib/designs";
@@ -433,6 +433,16 @@ function DesignCard({
 export default function SystemDesign() {
   const [activeTab, setActiveTab] = useState<DesignType>("hld");
   const [selectedEntry, setSelectedEntry] = useState<DesignEntry | null>(null);
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (selectedEntry) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [selectedEntry]);
 
   const filtered = designs.filter((d) => d.type === activeTab);
 

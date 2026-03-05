@@ -87,9 +87,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$heyvivek$2f$src$2f$context$2f$ThemeContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/heyvivek/src/context/ThemeContext.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 const navLinks = [
@@ -121,6 +123,7 @@ const navLinks = [
 function Navbar({ onNavigate }) {
     _s();
     const [isMenuOpen, setIsMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const { theme, toggleTheme } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$heyvivek$2f$src$2f$context$2f$ThemeContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTheme"])();
     const handleClick = (href)=>{
         onNavigate(href);
         setIsMenuOpen(false);
@@ -158,7 +161,7 @@ function Navbar({ onNavigate }) {
                         children: "vivek."
                     }, void 0, false, {
                         fileName: "[project]/heyvivek/src/components/ui/Navbar.tsx",
-                        lineNumber: 49,
+                        lineNumber: 51,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -173,7 +176,7 @@ function Navbar({ onNavigate }) {
                                     fontFamily: "var(--font-body)",
                                     fontSize: "14px",
                                     fontWeight: 500,
-                                    color: "#7A6E62",
+                                    color: "var(--clay-muted)",
                                     background: "none",
                                     border: "none",
                                     cursor: "pointer",
@@ -182,22 +185,66 @@ function Navbar({ onNavigate }) {
                                     transition: "all 0.2s"
                                 },
                                 onMouseEnter: (e)=>{
-                                    e.currentTarget.style.color = "#C67B5C";
+                                    e.currentTarget.style.color = "var(--clay-primary)";
                                     e.currentTarget.style.background = "rgba(198,123,92,0.1)";
                                 },
                                 onMouseLeave: (e)=>{
-                                    e.currentTarget.style.color = "#7A6E62";
+                                    e.currentTarget.style.color = "var(--clay-muted)";
                                     e.currentTarget.style.background = "none";
                                 },
                                 children: link.label
                             }, link.href, false, {
                                 fileName: "[project]/heyvivek/src/components/ui/Navbar.tsx",
-                                lineNumber: 70,
+                                lineNumber: 72,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/heyvivek/src/components/ui/Navbar.tsx",
-                        lineNumber: 65,
+                        lineNumber: 67,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].button, {
+                        onClick: toggleTheme,
+                        whileTap: {
+                            scale: 0.9
+                        },
+                        title: theme === "dark" ? "Switch to light mode" : "Switch to dark mode",
+                        style: {
+                            width: "34px",
+                            height: "34px",
+                            borderRadius: "50%",
+                            background: "var(--clay-card)",
+                            border: "none",
+                            cursor: "pointer",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            fontSize: "16px",
+                            boxShadow: "3px 3px 7px rgba(200,191,176,0.5), -2px -2px 6px rgba(255,255,255,0.7)",
+                            marginLeft: "8px",
+                            flexShrink: 0
+                        },
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].span, {
+                            initial: {
+                                rotate: -30,
+                                opacity: 0
+                            },
+                            animate: {
+                                rotate: 0,
+                                opacity: 1
+                            },
+                            transition: {
+                                duration: 0.25
+                            },
+                            children: theme === "dark" ? "☀️" : "🌙"
+                        }, theme, false, {
+                            fileName: "[project]/heyvivek/src/components/ui/Navbar.tsx",
+                            lineNumber: 122,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/heyvivek/src/components/ui/Navbar.tsx",
+                        lineNumber: 102,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -231,7 +278,7 @@ function Navbar({ onNavigate }) {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/heyvivek/src/components/ui/Navbar.tsx",
-                                lineNumber: 114,
+                                lineNumber: 147,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].span, {
@@ -249,7 +296,7 @@ function Navbar({ onNavigate }) {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/heyvivek/src/components/ui/Navbar.tsx",
-                                lineNumber: 124,
+                                lineNumber: 157,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].span, {
@@ -269,19 +316,19 @@ function Navbar({ onNavigate }) {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/heyvivek/src/components/ui/Navbar.tsx",
-                                lineNumber: 134,
+                                lineNumber: 167,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/heyvivek/src/components/ui/Navbar.tsx",
-                        lineNumber: 100,
+                        lineNumber: 133,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/heyvivek/src/components/ui/Navbar.tsx",
-                lineNumber: 39,
+                lineNumber: 41,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -342,27 +389,31 @@ function Navbar({ onNavigate }) {
                             children: link.label
                         }, link.href, false, {
                             fileName: "[project]/heyvivek/src/components/ui/Navbar.tsx",
-                            lineNumber: 168,
+                            lineNumber: 201,
                             columnNumber: 15
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/heyvivek/src/components/ui/Navbar.tsx",
-                    lineNumber: 150,
+                    lineNumber: 183,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/heyvivek/src/components/ui/Navbar.tsx",
-                lineNumber: 148,
+                lineNumber: 181,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/heyvivek/src/components/ui/Navbar.tsx",
-        lineNumber: 28,
+        lineNumber: 30,
         columnNumber: 5
     }, this);
 }
-_s(Navbar, "vK10R+uCyHfZ4DZVnxbYkMWJB8g=");
+_s(Navbar, "qF9Rr4GYC/2k2OthE1A7QlMiO5c=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$heyvivek$2f$src$2f$context$2f$ThemeContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTheme"]
+    ];
+});
 _c = Navbar;
 var _c;
 __turbopack_context__.k.register(_c, "Navbar");

@@ -750,6 +750,23 @@ function SystemDesign() {
     _s();
     const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("hld");
     const [selectedEntry, setSelectedEntry] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    // Lock body scroll when modal is open
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "SystemDesign.useEffect": ()=>{
+            if (selectedEntry) {
+                document.body.style.overflow = "hidden";
+            } else {
+                document.body.style.overflow = "";
+            }
+            return ({
+                "SystemDesign.useEffect": ()=>{
+                    document.body.style.overflow = "";
+                }
+            })["SystemDesign.useEffect"];
+        }
+    }["SystemDesign.useEffect"], [
+        selectedEntry
+    ]);
     const filtered = __TURBOPACK__imported__module__$5b$project$5d2f$heyvivek$2f$src$2f$lib$2f$designs$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["designs"].filter((d)=>d.type === activeTab);
     const tabs = [
         {
@@ -806,7 +823,7 @@ function SystemDesign() {
                                     children: "System Design"
                                 }, void 0, false, {
                                     fileName: "[project]/heyvivek/src/components/sections/SystemDesign.tsx",
-                                    lineNumber: 459,
+                                    lineNumber: 469,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -818,13 +835,13 @@ function SystemDesign() {
                                     children: "Architecture deep-dives with design decisions & trade-offs ✦"
                                 }, void 0, false, {
                                     fileName: "[project]/heyvivek/src/components/sections/SystemDesign.tsx",
-                                    lineNumber: 469,
+                                    lineNumber: 479,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/heyvivek/src/components/sections/SystemDesign.tsx",
-                            lineNumber: 452,
+                            lineNumber: 462,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -875,19 +892,19 @@ function SystemDesign() {
                                             children: count
                                         }, void 0, false, {
                                             fileName: "[project]/heyvivek/src/components/sections/SystemDesign.tsx",
-                                            lineNumber: 518,
+                                            lineNumber: 528,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, tab.key, true, {
                                     fileName: "[project]/heyvivek/src/components/sections/SystemDesign.tsx",
-                                    lineNumber: 495,
+                                    lineNumber: 505,
                                     columnNumber: 17
                                 }, this);
                             })
                         }, void 0, false, {
                             fileName: "[project]/heyvivek/src/components/sections/SystemDesign.tsx",
-                            lineNumber: 481,
+                            lineNumber: 491,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -920,12 +937,12 @@ function SystemDesign() {
                                             onClick: ()=>setSelectedEntry(entry)
                                         }, entry.id, false, {
                                             fileName: "[project]/heyvivek/src/components/sections/SystemDesign.tsx",
-                                            lineNumber: 557,
+                                            lineNumber: 567,
                                             columnNumber: 21
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/heyvivek/src/components/sections/SystemDesign.tsx",
-                                    lineNumber: 549,
+                                    lineNumber: 559,
                                     columnNumber: 17
                                 }, this) : // Empty state for LLD
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -954,7 +971,7 @@ function SystemDesign() {
                                             children: "🚧"
                                         }, void 0, false, {
                                             fileName: "[project]/heyvivek/src/components/sections/SystemDesign.tsx",
-                                            lineNumber: 580,
+                                            lineNumber: 590,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -967,7 +984,7 @@ function SystemDesign() {
                                             children: "Coming Soon"
                                         }, void 0, false, {
                                             fileName: "[project]/heyvivek/src/components/sections/SystemDesign.tsx",
-                                            lineNumber: 581,
+                                            lineNumber: 591,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -981,34 +998,34 @@ function SystemDesign() {
                                             children: "LLD case studies (Coffee Machine, Parking Lot, Logging Framework…) are being documented. Check back soon!"
                                         }, void 0, false, {
                                             fileName: "[project]/heyvivek/src/components/sections/SystemDesign.tsx",
-                                            lineNumber: 591,
+                                            lineNumber: 601,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/heyvivek/src/components/sections/SystemDesign.tsx",
-                                    lineNumber: 567,
+                                    lineNumber: 577,
                                     columnNumber: 17
                                 }, this)
                             }, activeTab, false, {
                                 fileName: "[project]/heyvivek/src/components/sections/SystemDesign.tsx",
-                                lineNumber: 541,
+                                lineNumber: 551,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/heyvivek/src/components/sections/SystemDesign.tsx",
-                            lineNumber: 540,
+                            lineNumber: 550,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/heyvivek/src/components/sections/SystemDesign.tsx",
-                    lineNumber: 450,
+                    lineNumber: 460,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/heyvivek/src/components/sections/SystemDesign.tsx",
-                lineNumber: 446,
+                lineNumber: 456,
                 columnNumber: 7
             }, this),
             selectedEntry && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(DesignModal, {
@@ -1016,13 +1033,13 @@ function SystemDesign() {
                 onClose: ()=>setSelectedEntry(null)
             }, void 0, false, {
                 fileName: "[project]/heyvivek/src/components/sections/SystemDesign.tsx",
-                lineNumber: 611,
+                lineNumber: 621,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true);
 }
-_s(SystemDesign, "Z8AS8qPqks/h3nb4o+s2rils1XA=");
+_s(SystemDesign, "c1v9CAlD54RN0WUJ/Sg7+qsyEOM=");
 _c2 = SystemDesign;
 var _c, _c1, _c2;
 __turbopack_context__.k.register(_c, "DesignModal");

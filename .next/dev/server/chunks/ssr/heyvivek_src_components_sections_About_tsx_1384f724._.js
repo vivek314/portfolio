@@ -11,8 +11,25 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$mo
 "use client";
 ;
 ;
+const stats = [
+    {
+        number: "3+",
+        label: "Years Experience"
+    },
+    {
+        number: "8.55",
+        label: "GPA at IIT Hyderabad"
+    },
+    {
+        number: "10+",
+        label: "System Designs"
+    },
+    {
+        number: "4+",
+        label: "AI Certifications"
+    }
+];
 const skills = [
-    // Languages
     {
         name: "Java",
         category: "backend"
@@ -29,7 +46,6 @@ const skills = [
         name: "C++",
         category: "backend"
     },
-    // Backend
     {
         name: "Spring Boot",
         category: "backend"
@@ -46,7 +62,6 @@ const skills = [
         name: "LangGraph",
         category: "backend"
     },
-    // Tools & Platforms
     {
         name: "Docker",
         category: "tool"
@@ -69,14 +84,21 @@ const pillClass = {
     backend: "clay-pill clay-pill-backend",
     tool: "clay-pill clay-pill-tool"
 };
-const containerVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.06,
-            delayChildren: 0.3
-        }
-    }
+const cardVariants = {
+    hidden: {
+        opacity: 0,
+        y: 24
+    },
+    visible: (i)=>({
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring",
+                stiffness: 140,
+                damping: 18,
+                delay: i * 0.08
+            }
+        })
 };
 const pillVariants = {
     hidden: {
@@ -99,23 +121,19 @@ function About() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "about",
         style: {
-            minHeight: "100vh",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
             padding: "120px 24px",
             position: "relative"
         },
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             style: {
-                maxWidth: "600px",
-                width: "100%"
+                maxWidth: "1000px",
+                margin: "0 auto"
             },
             children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].h2, {
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].p, {
                     initial: {
                         opacity: 0,
-                        y: 30
+                        y: 16
                     },
                     whileInView: {
                         opacity: 1,
@@ -125,79 +143,187 @@ function About() {
                         once: true
                     },
                     transition: {
-                        duration: 0.6
+                        duration: 0.5
                     },
                     style: {
-                        fontFamily: "var(--font-display)",
-                        fontSize: "clamp(40px, 6vw, 56px)",
-                        color: "#3D3229",
-                        marginBottom: "32px"
+                        fontFamily: "var(--font-body)",
+                        fontSize: "12px",
+                        fontWeight: 600,
+                        color: "var(--clay-primary)",
+                        letterSpacing: "0.18em",
+                        textTransform: "uppercase",
+                        marginBottom: "12px"
                     },
                     children: "About Me"
                 }, void 0, false, {
                     fileName: "[project]/heyvivek/src/components/sections/About.tsx",
-                    lineNumber: 61,
+                    lineNumber: 59,
                     columnNumber: 9
                 }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].h2, {
                     initial: {
                         opacity: 0,
-                        y: 40,
-                        scale: 0.97
+                        y: 24
                     },
                     whileInView: {
                         opacity: 1,
-                        y: 0,
-                        scale: 1
+                        y: 0
                     },
                     viewport: {
                         once: true
                     },
                     transition: {
-                        type: "spring",
-                        stiffness: 120,
-                        damping: 18
+                        duration: 0.6,
+                        delay: 0.05
                     },
-                    className: "clay-card",
                     style: {
-                        padding: "32px",
-                        marginBottom: "32px"
+                        fontFamily: "var(--font-display)",
+                        fontSize: "clamp(36px, 5vw, 52px)",
+                        color: "var(--clay-dark)",
+                        marginBottom: "56px",
+                        lineHeight: 1.1
+                    },
+                    children: "Crafting Scalable Systems"
+                }, void 0, false, {
+                    fileName: "[project]/heyvivek/src/components/sections/About.tsx",
+                    lineNumber: 78,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    style: {
+                        display: "grid",
+                        gridTemplateColumns: "1fr 1fr",
+                        gap: "60px",
+                        alignItems: "start",
+                        marginBottom: "56px"
                     },
                     children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            style: {
-                                fontFamily: "var(--font-body)",
-                                fontSize: "16px",
-                                lineHeight: 1.8,
-                                color: "#7A6E62",
-                                marginBottom: "16px"
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                            initial: {
+                                opacity: 0,
+                                x: -24
                             },
-                            children: "I'm a Software Developer at Oracle, specializing in Financial Service Cloud Development. AI graduate from IIT Hyderabad with expertise in building scalable, distributed systems and event-driven architectures. I focus on designing robust backend solutions with a passion for clean, maintainable code."
-                        }, void 0, false, {
+                            whileInView: {
+                                opacity: 1,
+                                x: 0
+                            },
+                            viewport: {
+                                once: true
+                            },
+                            transition: {
+                                duration: 0.6,
+                                delay: 0.1
+                            },
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    style: {
+                                        fontFamily: "var(--font-body)",
+                                        fontSize: "15px",
+                                        lineHeight: 1.85,
+                                        color: "var(--clay-muted)",
+                                        marginBottom: "20px",
+                                        fontWeight: 300
+                                    },
+                                    children: "I'm a Backend & AI Engineer at Oracle India, specializing in Financial Service Cloud Development. AI graduate from IIT Hyderabad with expertise in building scalable, distributed systems and event-driven architectures."
+                                }, void 0, false, {
+                                    fileName: "[project]/heyvivek/src/components/sections/About.tsx",
+                                    lineNumber: 111,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    style: {
+                                        fontFamily: "var(--font-body)",
+                                        fontSize: "15px",
+                                        lineHeight: 1.85,
+                                        color: "var(--clay-muted)",
+                                        fontWeight: 300
+                                    },
+                                    children: "My work spans designing batch orchestration systems, implementing producer-side services, and architecting event-driven platforms. I believe in the power of system design principles, distributed computing, and using the right tools to solve complex problems at scale."
+                                }, void 0, false, {
+                                    fileName: "[project]/heyvivek/src/components/sections/About.tsx",
+                                    lineNumber: 123,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/heyvivek/src/components/sections/About.tsx",
-                            lineNumber: 85,
+                            lineNumber: 105,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             style: {
-                                fontFamily: "var(--font-body)",
-                                fontSize: "16px",
-                                lineHeight: 1.8,
-                                color: "#7A6E62"
+                                display: "grid",
+                                gridTemplateColumns: "1fr 1fr",
+                                gap: "20px"
                             },
-                            children: "My work spans designing batch orchestration systems, implementing producer-side services, and architecting event-driven platforms. I believe in the power of system design principles, distributed computing, and using the right tools to solve complex problems at scale."
+                            children: stats.map((stat, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                                    custom: i,
+                                    variants: cardVariants,
+                                    initial: "hidden",
+                                    whileInView: "visible",
+                                    viewport: {
+                                        once: true
+                                    },
+                                    className: "clay-card stat-card-hover",
+                                    style: {
+                                        padding: "28px",
+                                        position: "relative",
+                                        overflow: "hidden"
+                                    },
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "stat-accent-line"
+                                        }, void 0, false, {
+                                            fileName: "[project]/heyvivek/src/components/sections/About.tsx",
+                                            lineNumber: 151,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            style: {
+                                                fontFamily: "var(--font-display)",
+                                                fontSize: "2rem",
+                                                fontWeight: 700,
+                                                color: "var(--clay-primary)",
+                                                lineHeight: 1,
+                                                marginBottom: "8px"
+                                            },
+                                            children: stat.number
+                                        }, void 0, false, {
+                                            fileName: "[project]/heyvivek/src/components/sections/About.tsx",
+                                            lineNumber: 152,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            style: {
+                                                fontFamily: "var(--font-body)",
+                                                fontSize: "12px",
+                                                color: "var(--clay-muted)",
+                                                letterSpacing: "0.04em"
+                                            },
+                                            children: stat.label
+                                        }, void 0, false, {
+                                            fileName: "[project]/heyvivek/src/components/sections/About.tsx",
+                                            lineNumber: 162,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, stat.label, true, {
+                                    fileName: "[project]/heyvivek/src/components/sections/About.tsx",
+                                    lineNumber: 140,
+                                    columnNumber: 15
+                                }, this))
                         }, void 0, false, {
                             fileName: "[project]/heyvivek/src/components/sections/About.tsx",
-                            lineNumber: 96,
+                            lineNumber: 138,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/heyvivek/src/components/sections/About.tsx",
-                    lineNumber: 77,
+                    lineNumber: 95,
                     columnNumber: 9
                 }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].h3, {
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].p, {
                     initial: {
                         opacity: 0
                     },
@@ -212,25 +338,27 @@ function About() {
                     },
                     style: {
                         fontFamily: "var(--font-body)",
-                        fontSize: "13px",
+                        fontSize: "12px",
                         fontWeight: 600,
-                        color: "#C67B5C",
-                        letterSpacing: "0.1em",
+                        color: "var(--clay-primary)",
+                        letterSpacing: "0.15em",
                         textTransform: "uppercase",
                         marginBottom: "16px"
                     },
                     children: "Tech I work with"
                 }, void 0, false, {
                     fileName: "[project]/heyvivek/src/components/sections/About.tsx",
-                    lineNumber: 109,
+                    lineNumber: 176,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                    variants: containerVariants,
                     initial: "hidden",
                     whileInView: "visible",
                     viewport: {
                         once: true
+                    },
+                    transition: {
+                        staggerChildren: 0.05
                     },
                     style: {
                         display: "flex",
@@ -243,23 +371,23 @@ function About() {
                             children: skill.name
                         }, skill.name, false, {
                             fileName: "[project]/heyvivek/src/components/sections/About.tsx",
-                            lineNumber: 139,
+                            lineNumber: 202,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/heyvivek/src/components/sections/About.tsx",
-                    lineNumber: 127,
+                    lineNumber: 194,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/heyvivek/src/components/sections/About.tsx",
-            lineNumber: 59,
+            lineNumber: 56,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/heyvivek/src/components/sections/About.tsx",
-        lineNumber: 48,
+        lineNumber: 52,
         columnNumber: 5
     }, this);
 }

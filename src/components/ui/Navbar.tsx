@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTheme } from "@/context/ThemeContext";
 
 interface NavbarProps {
   onNavigate: (href: string) => void;
@@ -18,6 +19,7 @@ const navLinks = [
 
 export default function Navbar({ onNavigate }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const handleClick = (href: string) => {
     onNavigate(href);
@@ -74,7 +76,7 @@ export default function Navbar({ onNavigate }: NavbarProps) {
                 fontFamily: "var(--font-body)",
                 fontSize: "14px",
                 fontWeight: 500,
-                color: "#7A6E62",
+                color: "var(--clay-muted)",
                 background: "none",
                 border: "none",
                 cursor: "pointer",
@@ -83,11 +85,11 @@ export default function Navbar({ onNavigate }: NavbarProps) {
                 transition: "all 0.2s",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = "#C67B5C";
+                e.currentTarget.style.color = "var(--clay-primary)";
                 e.currentTarget.style.background = "rgba(198,123,92,0.1)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = "#7A6E62";
+                e.currentTarget.style.color = "var(--clay-muted)";
                 e.currentTarget.style.background = "none";
               }}
             >
@@ -95,6 +97,37 @@ export default function Navbar({ onNavigate }: NavbarProps) {
             </button>
           ))}
         </div>
+
+        {/* Theme Toggle */}
+        <motion.button
+          onClick={toggleTheme}
+          whileTap={{ scale: 0.9 }}
+          title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+          style={{
+            width: "34px",
+            height: "34px",
+            borderRadius: "50%",
+            background: "var(--clay-card)",
+            border: "none",
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "16px",
+            boxShadow: "3px 3px 7px rgba(200,191,176,0.5), -2px -2px 6px rgba(255,255,255,0.7)",
+            marginLeft: "8px",
+            flexShrink: 0,
+          }}
+        >
+          <motion.span
+            key={theme}
+            initial={{ rotate: -30, opacity: 0 }}
+            animate={{ rotate: 0, opacity: 1 }}
+            transition={{ duration: 0.25 }}
+          >
+            {theme === "dark" ? "☀️" : "🌙"}
+          </motion.span>
+        </motion.button>
 
         {/* Mobile Hamburger */}
         <button
