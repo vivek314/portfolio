@@ -34,6 +34,22 @@ export const resumeItems: ResumeItem[] = [
 
 export const projects: Project[] = [
   {
+    id: "lexrag",
+    title: "LexRAG — Currency-Aware Legal RAG",
+    description:
+      "A retrieval system for Indian income-tax law that prefers the current, authoritative statute over stale sources. Where naive RAG confidently cites repealed sections, LexRAG cites the in-force Income-tax Act, 2025 — lifting stale-law correctness from 25% to 100%, validated on a held-out set. Built with hybrid dense+BM25 retrieval, provenance-aware selection, and a correctness gate that goes beyond RAGAS faithfulness.",
+    tech: [
+      { name: "Python", category: "backend" },
+      { name: "FastAPI", category: "backend" },
+      { name: "Weaviate", category: "backend" },
+      { name: "Groq / Llama 3", category: "backend" },
+      { name: "RAGAS", category: "tool" },
+    ],
+    image: "/images/projects/lexrag.png",
+    liveUrl: "https://lexrag-eight.vercel.app",
+    githubUrl: "https://github.com/vivek314/LexRag",
+  },
+  {
     id: "project-1",
     title: "Scalable and Faster Configurable XML to JSON Converter",
     description:
